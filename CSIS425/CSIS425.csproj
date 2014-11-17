@@ -39,10 +39,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.DynamicProxy, Version=1.0.3.14911, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\LinFu.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=2.1.0.2002, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.LinFu, Version=2.1.0.2002, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\NHibernate.ByteCode.LinFu.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.3.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -165,8 +190,34 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Infrastructure\IAggregateRoot.cs" />
+    <Compile Include="Infrastructure\Query\CriteriaOperator.cs" />
+    <Compile Include="Infrastructure\Query\Criterion.cs" />
+    <Compile Include="Infrastructure\Query\NamedQueryFactory.cs" />
+    <Compile Include="Infrastructure\Query\OrderByClause.cs" />
+    <Compile Include="Infrastructure\Query\Query.cs" />
+    <Compile Include="Infrastructure\Query\QueryName.cs" />
+    <Compile Include="Infrastructure\Query\QueryOperator.cs" />
+    <Compile Include="Infrastructure\UnitofWork\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\UnitofWork\IUnitOfWorkRepository.cs" />
+    <Compile Include="Infrastructure\UnitofWork\UnitOfWork.cs" />
+    <Compile Include="Models\Model_Courses.cs" />
+    <Compile Include="Models\Model_Courses_IRepository.cs" />
+    <Compile Include="Models\Model_Players.cs" />
+    <Compile Include="Models\Model_Players_IRepository.cs" />
+    <Compile Include="Models\Model_Rounds.cs" />
+    <Compile Include="Models\Model_Rounds_IRepository.cs" />
+    <Compile Include="NHibernate\NHUnitOfWork.cs" />
+    <Compile Include="NHibernate\Repositories\CourseRepository.cs" />
+    <Compile Include="NHibernate\Repositories\PlayerRepository.cs" />
+    <Compile Include="NHibernate\Repositories\QueryTranslator.cs" />
+    <Compile Include="NHibernate\Repositories\Repository.cs" />
+    <Compile Include="NHibernate\Repositories\RoundRepository.cs" />
+    <Compile Include="NHibernate\SessionFactory.cs" />
+    <Compile Include="NHibernate\SessionStorage\HttpSessionContainer.cs" />
+    <Compile Include="NHibernate\SessionStorage\ISessionStorageContainer.cs" />
+    <Compile Include="NHibernate\SessionStorage\SessionStorageFactory.cs" />
+    <Compile Include="NHibernate\SessionStorage\ThreadSessionStorageContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -187,6 +238,9 @@
     <Content Include="Lib\NHibernate.ByteCode.LinFu.dll" />
     <Content Include="Lib\NHibernate.dll" />
     <Content Include="Lib\nunit.framework.dll" />
+    <EmbeddedResource Include="NHibernate\MappingFiles\Courses.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\MappingFiles\Players.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\MappingFiles\Rounds.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -211,7 +265,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NHibernate\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +273,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
