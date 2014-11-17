@@ -91,12 +91,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSIS425\CSIS425.csproj">
-      <Project>{41866309-61A7-4ED0-BAE4-6C1482913F03}</Project>
-      <Name>CSIS425</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

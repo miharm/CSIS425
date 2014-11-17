@@ -178,11 +178,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\Controller_Create_Course.cs" />
     <Compile Include="Controllers\Controller_Create_User.cs" />
     <Compile Include="Controllers\Controller_Join_Round.cs" />
