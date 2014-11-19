@@ -7,11 +7,8 @@ using System.Collections.Specialized;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Score_Card : Base_Controller
+    public interface Base_Controller : Controller
     {
-        public void run(NameValueCollection parameters)
-        {
-
-        }
+        void run(NameValueCollection parameters);
     }
 }
