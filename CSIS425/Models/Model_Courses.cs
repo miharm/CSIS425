@@ -13,5 +13,7 @@ namespace CSIS425.Models
         public int holes { get; set; }
 
         public string pars { get; set; }
+
+        public string name { get; set; }
     }
 }

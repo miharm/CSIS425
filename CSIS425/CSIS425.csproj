@@ -178,13 +178,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Base_Controller.cs" />
     <Compile Include="Controllers\Controller_Create_Course.cs" />
     <Compile Include="Controllers\Controller_Create_User.cs" />
+    <Compile Include="Controllers\Controller_Invalid_Action.cs" />
     <Compile Include="Controllers\Controller_Join_Round.cs" />
     <Compile Include="Controllers\Controller_Score_Card.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handler\Handler.cs" />
     <Compile Include="Infrastructure\IAggregateRoot.cs" />
     <Compile Include="Infrastructure\Query\CriteriaOperator.cs" />
     <Compile Include="Infrastructure\Query\Criterion.cs" />
