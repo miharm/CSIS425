@@ -16,6 +16,8 @@ namespace CSIS425.Models
 
         Model_Players FindBy(Guid Id);
 
+        Model_Players FindBy(Guid player_id, Guid round_id);
+
         IEnumerable<Model_Players> FindAll();
         IEnumerable<Model_Players> FindAll(int index, int count);
 

@@ -31,8 +31,17 @@ namespace CSIS425.Controllers
 
         public void run(NameValueCollection request)
         {
-            //load the page
-            this.load_page(request);
+            switch (request["command"])
+            {
+                case "load_page":
+                    //load the page
+                    this.load_page(request);
+                    break;
+                case "save_score":
+                    //save the new score
+                    this.save_score(request);
+                    break;
+            }
         }
 
         private Hashtable load_page(NameValueCollection request)
@@ -46,7 +55,21 @@ namespace CSIS425.Controllers
             Model_Courses course = _courseRepository.FindBy(course_id);
 
             //load the player record
-            Model_Players player = _playterRepository.FindBy(player_id);
+            Model_Players player = _playerRepository.FindBy(player_id);
+
+            response["success"] = true;
+            response["message"] = "";
+            return response;
+        }
+
+        private Hashtable save_score(NameValueCollection request)
+        {
+            Hashtable response = new Hashtable();
+
+            Guid round_id = new Guid(request["round_id"]);
+            Guid player_id = new Guid(request["player_id"]);
+
+
 
             response["success"] = true;
             response["message"] = "";

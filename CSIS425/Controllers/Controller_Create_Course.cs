@@ -51,6 +51,8 @@ namespace CSIS425.Controllers
             _courseRepository.Add(new_course);
             _uow.Commit();
 
+            response["success"] = true;
+            response["message"] = "";
             return response;
         }
     }
