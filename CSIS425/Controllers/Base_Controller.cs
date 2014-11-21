@@ -7,8 +7,10 @@ using System.Collections.Specialized;
 
 namespace CSIS425.Controllers
 {
-    public interface Base_Controller : Controller
+    public class Base_Controller : Controller
     {
-        void run(NameValueCollection parameters);
+        public void run(NameValueCollection parameters){
+            
+        }
     }
 }
