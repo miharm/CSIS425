@@ -27,7 +27,7 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public void run(NameValueCollection parameters)
+        public new void run(NameValueCollection parameters)
         {
 
         }

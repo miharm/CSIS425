@@ -8,7 +8,7 @@ namespace CSIS425.Controllers
 {
     public class Controller_Invalid_Action : Base_Controller
     {
-        public void run(NameValueCollection parameters)
+        public new void run(NameValueCollection parameters)
         {
 
         }

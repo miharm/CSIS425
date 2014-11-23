@@ -38,7 +38,7 @@ namespace CSIS425.NHibernate.Repositories
         public T FindBy(EntityKey Id)
         {
             return SessionFactory.GetCurrentSession().Get<T>(Id);
-        }    
+        }   
 
         public IEnumerable<T> FindAll()
         {

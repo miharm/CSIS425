@@ -28,7 +28,7 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public void run(NameValueCollection request)
+        public new void run(NameValueCollection request)
         {
             this.save_course(request);
         }

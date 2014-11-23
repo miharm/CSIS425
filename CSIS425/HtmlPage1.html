@@ -4,6 +4,36 @@
     <title></title>
 </head>
 <body>
-    <button> Hello</button>
+    <button id="button"> Create Course</button>
 </body>
 </html>
+
+<script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+<script>
+    var object = {
+        create_course: function () {
+            jQuery.ajax({
+                url: 'foo.aspx',
+                data: {
+                    'holes': 9,
+                    'name': 'River Falls',
+                    'pars': '3,3,3,3,3,3,3,3,3',
+                    'action': 'manage_create_course',
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (response) {
+                    console.log('success', response);
+                },
+                error: function (x, textStatus) {
+                    console.log('error', x, textStatus);
+                }
+            });
+        }
+    }
+   jQuery(document).ready( function () {
+       jQuery('#button').click(function () {
+           object.create_course();
+       });
+   });
+</script>

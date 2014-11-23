@@ -29,7 +29,7 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public void run(NameValueCollection request)
+        public new void run(NameValueCollection request)
         {
             switch (request["command"])
             {
@@ -66,10 +66,15 @@ namespace CSIS425.Controllers
         {
             Hashtable response = new Hashtable();
 
-            Guid round_id = new Guid(request["round_id"]);
+            //load the player record
             Guid player_id = new Guid(request["player_id"]);
+            Model_Players player = _playerRepository.FindBy(player_id);
 
+            //put the new score in
+            player.score = request["score"];
 
+            _playerRepository.Add(player);
+            _uow.Commit();
 
             response["success"] = true;
             response["message"] = "";
