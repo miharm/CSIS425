@@ -8,43 +8,53 @@
 <body>
 
     <h1>Create Course</h1>
-    <form id="CreateCourse">
-        Enter a new course name
-        <input id="name" type="text" /><br /> <br/>
-        Choose the number of holes
-        <input id="holes" type="number" min="3" max="25" step="1" value="9" />
-        <br/>
-        <button id="btnSumbit" type="submit" >Create Course</button>
-    </form>
+    Enter a new course name
+    <input id="name" name="name" type="text" /><br /> <br />
+    Choose the number of holes
+    <input id="holes" name="holes" type="number" min="3" max="25" step="1" value="9" />
+    <br />
+    <br />
+    Enter the pars (comma seperated ex. 1,2,3,4)
+    <input id="pars" name="pars" type="text" />
+    <br />
+    <input id="action" name="action" type="hidden" />
+    <button id="btnSumbit" type="submit">Create Course</button>
 </body>
 </html>
 
+<link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
+<link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
 <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+<script src="Scripts/jquery.loadmask.js" type="text/javascript"></script>
 <script>
     var object = {
         create_course: function () {
+            //mask the page
+            jQuery('body').mask( 'Creating Course' )
             jQuery.ajax({
                 url: 'foo.aspx',
                 data: {
-                    'holes': 9,
-                    'name': 'River Falls',
-                    'pars': '3,3,3,3,3,3,3,3,3',
+                    'holes': jQuery("#holes").val(),
+                    'name': jQuery("#name").val(),
+                    'pars': jQuery("#pars").val(),
                     'action': 'manage_create_course',
                 },
                 type: 'post',
                 dataType: 'json',
                 success: function (response) {
                     console.log('success', response);
+                    location.reload();
                 },
                 error: function (x, textStatus) {
                     console.log('error', x, textStatus);
+                    jQuery('body').unmask();
                 }
             });
         }
     }
    jQuery(document).ready( function () {
-       jQuery('#button').click(function () {
-           alert('button click');
+       jQuery('#btnSumbit').click(function () {
            object.create_course();
        });
    });
