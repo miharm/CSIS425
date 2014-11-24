@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
   namespace="CSIS425.Models"
-  assembly="CSIS425.Models">
+  assembly="CSIS425">
 
   <class name="CSIS425.Models.Model_Players" table="Players" lazy="false" >
 
-    <composite-id name="key" >
-      <key-property name="player_id"></key-property>
-      <key-many-to-many name="round_id" class="Rounds" column="round_id"/>
-    </composite-id>
+    <id name="player_id" column="player_id" type="guid">
+      <generator class="guid" />
+    </id>
+
+    <many-to-one name="round_id" class="Model_Rounds" column="round_id"></many-to-one>
     
     <property name="score">
       <column name="score" sql-type="varchar(50)" not-null="true" />

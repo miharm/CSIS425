@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
   namespace="CSIS425.Models"
-  assembly="CSIS425.Models">
+  assembly="CSIS425">
 
   <class name="CSIS425.Models.Model_Rounds" table="Rounds" lazy="false" >
 
@@ -9,7 +9,7 @@
       <generator class="guid" />
     </id>
 
-    <one-to-many name="course_id" class="Courses" column="course_id"></one-to-many>
+    <many-to-one name="course_id" class="Model_Courses" column="course_id"></many-to-one>
 
   </class>
 </hibernate-mapping>

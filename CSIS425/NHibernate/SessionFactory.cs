@@ -16,7 +16,7 @@ namespace CSIS425.NHibernate
         private static void Init()
         {
             Configuration config = new Configuration();
-            config.AddAssembly("CSIS425.NHibernate");
+            config.AddAssembly("CSIS425");
 
             log4net.Config.XmlConfigurator.Configure();
             

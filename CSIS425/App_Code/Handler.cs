@@ -9,48 +9,60 @@ using CSIS425.Infrastructure.UnitOfWork;
 using CSIS425.NHibernate;
 using CSIS425.NHibernate.Repositories;
 using CSIS425.Models;
+using CSIS425.Utility;
+using System.Web.Script;
+using System.Web.Script.Serialization;
+using System.Web.Script.Services;
 
-    public class Handler : IHttpHandler
+public class Handler : IHttpHandler
+{
+    public void ProcessRequest(HttpContext context)
     {
-        public ActionResult ProcessRequest(HttpContext context)
+        NameValueCollection parameters = context.Request.Params;
+
+        IUnitOfWork uow = new NHUnitOfWork();
+        Model_Courses_IRepository courseRepository = new CourseRepository(uow);
+        Model_Players_IRepository playerRepository = new PlayerRepository(uow);
+        Model_Rounds_IRepository roundRepository = new RoundRepository(uow);
+
+        try
         {
-            NameValueCollection parameters = context.Request.Params;
-
-            Base_Controller controller;
-            IUnitOfWork uow = new NHUnitOfWork();
-            Model_Courses_IRepository courseRepository = new CourseRepository( uow );
-            Model_Players_IRepository playerRepository = new PlayerRepository(uow);
-            Model_Rounds_IRepository roundRepository = new RoundRepository(uow);
-
-            switch ( parameters["action"] )
+            switch (parameters["action"])
             {
                 case "manage_create_course":
-                    controller = new Controller_Create_Course(uow, courseRepository, playerRepository, roundRepository);
+                    Controller_Create_Course controller_create_course = new Controller_Create_Course(uow, courseRepository, playerRepository, roundRepository);
+                      controller_create_course.run(context);
                     break;
                 case "manage_create_user":
-                    controller = new Controller_Create_User(uow, courseRepository, playerRepository, roundRepository);
+                    Controller_Create_User controller_create_user = new Controller_Create_User(uow, courseRepository, playerRepository, roundRepository);
+                    controller_create_user.run(parameters);
                     break;
                 case "manage_join_round":
-                    controller = new Controller_Join_Round(uow, courseRepository, playerRepository, roundRepository);
+                    Controller_Join_Round controller_join_round = new Controller_Join_Round(uow, courseRepository, playerRepository, roundRepository);
+                    controller_join_round.run(parameters);
                     break;
                 case "manage_score_card":
-                    controller = new Controller_Score_Card(uow, courseRepository, playerRepository, roundRepository);
+                    Controller_Score_Card controller_score_card = new Controller_Score_Card(uow, courseRepository, playerRepository, roundRepository);
+                    controller_score_card.run(parameters);
                     break;
                 default:
-                    controller = new Controller_Invalid_Action();
+                    Controller_Invalid_Action controller_invalid_action = new Controller_Invalid_Action();
+                    controller_invalid_action.run(parameters);
                     break;
             }
 
-            controller.run(parameters);
-
-            return Json(new { foo = "bar", baz = "Blech" });
         }
-
-        public bool IsReusable
+        catch (Exception ex)
         {
-            get
-            {
-                return false;
-            }
+            UtilityClass.respond(context, false, ex.ToString(), new { });
         }
     }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+}

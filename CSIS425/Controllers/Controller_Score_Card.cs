@@ -11,7 +11,7 @@ using CSIS425.Models;
 namespace CSIS425.Controllers
 {
 
-    public class Controller_Score_Card : Base_Controller 
+    public class Controller_Score_Card : Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;
@@ -29,7 +29,7 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public new void run(NameValueCollection request)
+        public void run(NameValueCollection request)
         {
             switch (request["command"])
             {

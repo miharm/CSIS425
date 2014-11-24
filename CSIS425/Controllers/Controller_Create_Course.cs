@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services;
+using System.Web.Script;
+using System.Web.Script.Serialization;
+using System.Web.Script.Services;
 using System.Collections.Specialized;
 using System.Collections;
 using CSIS425.Infrastructure.UnitOfWork;
 using CSIS425.Models;
+using CSIS425.Utility;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Create_Course : Base_Controller 
+    public class Controller_Create_Course : Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;
@@ -28,14 +33,15 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public new void run(NameValueCollection request)
+        public void run(HttpContext context)
         {
-            this.save_course(request);
+            this.save_course(context);
         }
 
-        private Hashtable save_course(NameValueCollection request)
+        [WebMethod][ScriptMethod]
+        public void save_course(HttpContext context)
         {
-            Hashtable response = new Hashtable();
+            NameValueCollection request = context.Request.Params;
 
             Guid course_id = new Guid();
             int holes = Convert.ToInt32(request["holes"]);
@@ -51,9 +57,7 @@ namespace CSIS425.Controllers
             _courseRepository.Add(new_course);
             _uow.Commit();
 
-            response["success"] = true;
-            response["message"] = "";
-            return response;
+            UtilityClass.respond(context, true, "", new { });
         }
     }
 }

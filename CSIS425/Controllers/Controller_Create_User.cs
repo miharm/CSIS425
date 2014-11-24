@@ -9,7 +9,7 @@ using CSIS425.Infrastructure.UnitOfWork;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Create_User : Base_Controller 
+    public class Controller_Create_User : Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;
@@ -27,7 +27,7 @@ namespace CSIS425.Controllers
             _roundRepository = roundRepository;
         }
 
-        public new void run(NameValueCollection parameters)
+        public void run(NameValueCollection parameters)
         {
 
         }
