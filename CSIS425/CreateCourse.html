@@ -1,10 +1,21 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Create Course</title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet/StyleSheet.css" />      
 </head>
+
 <body>
-    <button id="button"> Create Course</button>
+
+    <h1>Create Course</h1>
+    <form id="CreateCourse">
+        Enter a new course name
+        <input id="name" type="text" /><br /> <br/>
+        Choose the number of holes
+        <input id="holes" type="number" min="3" max="25" step="1" value="9" />
+        <br/>
+        <button id="btnSumbit" type="submit" >Create Course</button>
+    </form>
 </body>
 </html>
 
@@ -33,6 +44,7 @@
     }
    jQuery(document).ready( function () {
        jQuery('#button').click(function () {
+           alert('button click');
            object.create_course();
        });
    });

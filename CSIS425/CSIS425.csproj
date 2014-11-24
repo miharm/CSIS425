@@ -185,7 +185,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Handler\Handler.cs" />
     <Compile Include="Infrastructure\IAggregateRoot.cs" />
     <Compile Include="Infrastructure\Query\CriteriaOperator.cs" />
     <Compile Include="Infrastructure\Query\Criterion.cs" />
@@ -228,7 +227,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="HtmlPage1.html" />
+    <Content Include="CreateCourse.html" />
+    <Content Include="Images\download.jpg" />
+    <Content Include="Images\Red Frisbee.jpg" />
+    <Content Include="Join Round.html" />
     <Content Include="Lib\Iesi.Collections.dll" />
     <Content Include="Lib\LinFu.DynamicProxy.dll" />
     <Content Include="Lib\log4net.dll" />
@@ -238,6 +240,8 @@
     <EmbeddedResource Include="NHibernate\MappingFiles\Courses.hbm.xml" />
     <EmbeddedResource Include="NHibernate\MappingFiles\Players.hbm.xml" />
     <EmbeddedResource Include="NHibernate\MappingFiles\Rounds.hbm.xml" />
+    <Content Include="Main.html" />
+    <Content Include="New Round.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -252,7 +256,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="StyleSheet\StyleSheet.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -262,6 +269,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Handler\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
