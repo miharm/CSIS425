@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+  namespace="CSIS425.Models"
+  assembly="CSIS425">
+
+  <class name="CSIS425.Models.Model_Users" table="Users" lazy="false" >
+
+    <id name="user_id" column="user_id" type="guid">
+      <generator class="guid" />
+    </id>
+
+    <property name="first_name">
+      <column name="first_name" sql-type="varchar(50)" not-null="true" />
+    </property>
+
+    <property name="last_name">
+      <column name="last_name" sql-type="varchar(50)" not-null="true" />
+    </property>
+
+    <property name="password">
+      <column name="password" sql-type="varchar(50)" not-null="true" />
+    </property>
+
+  </class>
+</hibernate-mapping>

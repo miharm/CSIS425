@@ -12,6 +12,8 @@ namespace CSIS425.Models
 
         public Guid round_id { get; set; }
 
+        public Guid user_id { get; set; }
+
         public string score { get; set; }
     }
 }

@@ -24,30 +24,31 @@ public class Handler : IHttpHandler
         Model_Courses_IRepository courseRepository = new CourseRepository(uow);
         Model_Players_IRepository playerRepository = new PlayerRepository(uow);
         Model_Rounds_IRepository roundRepository = new RoundRepository(uow);
+        Model_Users_IRepository userRepository = new UserRepository(uow);
 
         try
         {
             switch (parameters["action"])
             {
                 case "manage_create_course":
-                    Controller_Create_Course controller_create_course = new Controller_Create_Course(uow, courseRepository, playerRepository, roundRepository);
+                    Controller_Create_Course controller_create_course = new Controller_Create_Course(uow, courseRepository, playerRepository, roundRepository, userRepository);
                       controller_create_course.run(context);
                     break;
                 case "manage_create_user":
-                    Controller_Create_User controller_create_user = new Controller_Create_User(uow, courseRepository, playerRepository, roundRepository);
-                    controller_create_user.run(parameters);
+                    Controller_Create_User controller_create_user = new Controller_Create_User(uow, courseRepository, playerRepository, roundRepository, userRepository);
+                    controller_create_user.run(context);
                     break;
                 case "manage_join_round":
-                    Controller_Join_Round controller_join_round = new Controller_Join_Round(uow, courseRepository, playerRepository, roundRepository);
-                    controller_join_round.run(parameters);
+                    Controller_Join_Round controller_join_round = new Controller_Join_Round(uow, courseRepository, playerRepository, roundRepository, userRepository);
+                    controller_join_round.run(context);
                     break;
                 case "manage_score_card":
-                    Controller_Score_Card controller_score_card = new Controller_Score_Card(uow, courseRepository, playerRepository, roundRepository);
-                    controller_score_card.run(parameters);
+                    Controller_Score_Card controller_score_card = new Controller_Score_Card(uow, courseRepository, playerRepository, roundRepository, userRepository);
+                    controller_score_card.run(context);
                     break;
                 default:
                     Controller_Invalid_Action controller_invalid_action = new Controller_Invalid_Action();
-                    controller_invalid_action.run(parameters);
+                    controller_invalid_action.run(context);
                     break;
             }
 

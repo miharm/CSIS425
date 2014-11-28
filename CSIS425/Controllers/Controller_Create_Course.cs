@@ -21,16 +21,19 @@ namespace CSIS425.Controllers
         private Model_Courses_IRepository _courseRepository;
         private Model_Players_IRepository _playerRepository;
         private Model_Rounds_IRepository _roundRepository;
+        private Model_Users_IRepository _userRespository;
 
         public Controller_Create_Course( IUnitOfWork uow,
                                          Model_Courses_IRepository courseRepository,
                                          Model_Players_IRepository playerRepository,
-                                         Model_Rounds_IRepository roundRepository)
+                                         Model_Rounds_IRepository roundRepository,
+                                         Model_Users_IRepository userRespository)
         {
             _uow = uow;
             _courseRepository = courseRepository;
             _playerRepository = playerRepository;
             _roundRepository = roundRepository;
+            _userRespository = userRespository;
         }
 
         public void run(HttpContext context)

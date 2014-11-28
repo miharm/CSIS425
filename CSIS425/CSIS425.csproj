@@ -176,6 +176,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Model_Users.cs" />
+    <Compile Include="Models\Model_Users_IRepository.cs" />
+    <Compile Include="NHibernate\Repositories\UserRepository.cs" />
     <Compile Include="Utility\UtilityClass.cs" />
     <Content Include="App_Code\Handler.cs" />
     <Compile Include="Controllers\Base_Controller.cs" />
@@ -244,6 +247,7 @@
     <EmbeddedResource Include="NHibernate\MappingFiles\Rounds.hbm.xml" />
     <Content Include="Main.html" />
     <Content Include="New Round.html" />
+    <Content Include="NHibernate\MappingFiles\Users.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
