@@ -13,7 +13,7 @@ using System.Web.Script.Services;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Join_Round : Controller
+    public class Controller_Join_Round : Base_Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;

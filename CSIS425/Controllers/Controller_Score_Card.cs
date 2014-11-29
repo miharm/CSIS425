@@ -15,7 +15,7 @@ using System.Web.Script.Services;
 namespace CSIS425.Controllers
 {
 
-    public class Controller_Score_Card : Controller
+    public class Controller_Score_Card : Base_Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;

@@ -14,7 +14,7 @@ using CSIS425.Utility;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Create_User : Controller
+    public class Controller_Create_User : Base_Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;

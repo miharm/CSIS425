@@ -12,7 +12,7 @@ using System.Web.Script.Services;
 
 namespace CSIS425.Controllers
 {
-    public class Controller_Invalid_Action : Controller
+    public class Controller_Invalid_Action : Base_Controller
     {
         public void run(HttpContext context)
         {
