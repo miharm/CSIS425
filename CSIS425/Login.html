@@ -6,14 +6,18 @@
 </head>
 <body>
     <h1>Login</h1>
+ 
     Enter Username
     <input id="user_id" name="user_id" type="text" /><br /> <br />
     Enter Password
     <input id="password" name="password" type="text" />
     <br />
     <br />
-    <input id="action" name="action" type="hidden"/>
-    <button id="btnSumbit" type="submit">Login</button>
+    <input id="action" name="action" type="hidden" onclick="check(this.form)"/>
+    <button id="btnSumbit" type="submit" >Login</button>
+   
+    <!--Need validation code and link to main menu---> 
+    
     <br />
     <br />
     <br />
@@ -21,6 +25,6 @@
     <br />
     Need an Account?
     <input id="action" name="action" type="hidden"  />
-    <button id="btnSumbit" type="submit">Create Account</button>
+    <button id="btnSumbit" type="submit" onclick="window.location.href='/Register.html'">Create Account</button>
 </body>
 </html>
