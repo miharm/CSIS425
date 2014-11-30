@@ -48,12 +48,14 @@ namespace CSIS425.Controllers
             Guid user_id = new Guid();
             string first_name = request["first_name"];
             string last_name = request["last_name"];
+            string user_name = request["user_name"];
             string password = request["password"];
 
             Model_Users new_user = new Model_Users();
             new_user.user_id = user_id;
             new_user.first_name = first_name;
             new_user.last_name = last_name;
+            new_user.user_name = user_name;
             new_user.password = password;
 
             _userRespository.Add(new_user);

@@ -21,5 +21,9 @@
       <column name="password" sql-type="varchar(50)" not-null="true" />
     </property>
 
+    <property name="user_name">
+      <column name="user_name" sql-type="varchar(50)" not-null="true" />
+    </property>
+
   </class>
 </hibernate-mapping>

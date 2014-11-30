@@ -10,12 +10,12 @@
     </id>
 
     <many-to-one name="round_id" class="Model_Rounds" column="round_id"></many-to-one>
-
-    <many-to-one name="user_id" class="Model_Users" column="user_id"></many-to-one>
     
     <property name="score">
       <column name="score" sql-type="varchar(50)" not-null="true" />
     </property>
+
+    <one-to-one name="user_id" class="Model_Users"  constrained="true"/>
 
   </class>
 </hibernate-mapping>

@@ -46,6 +46,10 @@ public class Handler : IHttpHandler
                     Controller_Score_Card controller_score_card = new Controller_Score_Card(uow, courseRepository, playerRepository, roundRepository, userRepository);
                     controller_score_card.run(context);
                     break;
+                case "manage_login":
+                    Controller_Login controller_login = new Controller_Login(uow, courseRepository, playerRepository, roundRepository, userRepository);
+                    controller_login.run(context);
+                    break;
                 default:
                     Controller_Invalid_Action controller_invalid_action = new Controller_Invalid_Action();
                     controller_invalid_action.run(context);

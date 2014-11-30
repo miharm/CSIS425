@@ -6,15 +6,16 @@
 </head>
 <body>
     <h1>Login</h1>
+    <br/>
     <div class="pButtons">
         Enter Username <br/>
-        <input id="user_id" name="user_id" type="text" /><br /> <br />
+        <input id="user_name" name="user_name" type="text" /><br /> <br />
         Enter Password <br />
-        <input id="password" name="password" type="text" />
+        <input id="password" name="password" type="password" />
         <br />
         <br />
         <input id="action" name="action" type="hidden" onclick="check(this.form)" />
-        <button id="btnSumbit" type="submit" >Login</button>
+        <button id="btnLoginSumbit" type="submit" >Login</button>
 
         <!--Need validation code and link to main menu--->
 
@@ -25,8 +26,53 @@
         <br />
         Need an Account?
         <form action="Register.html">
-            <button id="btnSumbit" type="submit">Create Account</button>
+            <button id="btnRegisterSumbit" type="submit">Create Account</button>
         </form>
     </div>
+
+    <link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
+    <link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.loadmask.js" type="text/javascript"></script>
+    <script>
+        var object = {
+            login: function () {
+                //mask the page
+                jQuery('body').mask('Logging in')
+                jQuery.ajax({
+                    url: 'foo.aspx',
+                    data: {
+                        'user_name': jQuery("#user_name").val(),
+                        'password': jQuery("#password").val(),
+                        'action': 'manage_login',
+                    },
+                    type: 'post',
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log('success', response);
+                        if (response.success == true) {
+                            window.location = "Main.html";
+                        }
+                        else {
+                            jQuery('body').unmask();
+                            alert("Invalid Username or Password");
+                        }
+                    },
+                    error: function (x, textStatus) {
+                        console.log('error', x, textStatus);
+                        jQuery('body').unmask();
+                    }
+                });
+            }
+        }
+        jQuery(document).ready(function () {
+
+            jQuery('#btnLoginSumbit').click(function () {
+                object.login();
+            });
+        });
+
+    </script>
 </body>
 </html>

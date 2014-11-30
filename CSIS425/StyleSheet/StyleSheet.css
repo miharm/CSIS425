@@ -1,10 +1,11 @@
 ﻿        body {
             background-color: green;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color:#e82a2a;
             background:blue;
+            margin: 0 0 0 0;
         }
         button{
             font-size:20px;
@@ -40,10 +41,10 @@
             border-radius:0px;
             width:100px;
             height:40px;
-            background: none;
+            background:none;
             background-color:white;
         }
 
-        a:link { color:forestgreen }
-        a:visited { color:black }
-        a:hover { color:black }
+        a:link { color:red; text-decoration:none}
+        a:visited { color:red; text-decoration:none }
+        a:hover { color:red; text-decoration:none }

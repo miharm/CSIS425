@@ -15,5 +15,7 @@ namespace CSIS425.Models
         public string last_name { get; set; }
 
         public string password { get; set; }
+
+        public string user_name { get; set; }
     }
 }
