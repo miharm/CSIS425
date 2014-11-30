@@ -11,7 +11,7 @@
     Enter a new course name
     <input id="name" name="name" type="text" /><br /> <br />
     Choose the number of holes
-    <input id="holes" name="holes" type="number" min="3" max="25" step="1" value="9" />
+    <input id="holes" name="holes" type="number" min="3" max="27" step="1" value="9" />
     <br />
     <br />
     Enter the pars (comma seperated ex. 1,2,3,4)
@@ -53,8 +53,12 @@
             });
         }
     }
-   jQuery(document).ready( function () {
-       jQuery('#btnSumbit').click(function () {
+
+    jQuery(document).ready(function () {
+
+        jQuery('#btnSumbit').click(function () {
+            var spinner = $("#holes").spinner();
+            alert(spinner.val());
            object.create_course();
        });
    });
