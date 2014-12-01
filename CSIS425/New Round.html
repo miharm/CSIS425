@@ -51,3 +51,40 @@
     <button class="btnPlayer"> Start the Game </button>
 </body>
 </html>
+
+<link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
+<link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+<script src="Scripts/jquery.loadmask.js" type="text/javascript"></script>
+<script>
+    var object = {
+        start_round: function () {
+            //mask the page
+            jQuery('body').mask('Starting Round')
+            jQuery.ajax({
+                url: 'foo.aspx',
+                data: {
+                    'action': 'manage_score_card',
+                    'command': 'load_page'
+                },
+                type: 'get',
+                success: function (response) {
+                    console.log('success', response);
+                    //location.reload();
+                },
+                error: function (x, textStatus) {
+                    console.log('error', x, textStatus);
+                    jQuery('body').unmask();
+                }
+            });
+        }
+    }
+
+    jQuery(document).ready(function () {
+
+        jQuery('#btnPlayer').click(function () {
+            object.start_round();
+        });
+    });
+</script>

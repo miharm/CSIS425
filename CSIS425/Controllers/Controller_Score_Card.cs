@@ -15,7 +15,7 @@ using System.Web.Script.Services;
 namespace CSIS425.Controllers
 {
 
-    public class Controller_Score_Card : Base_Controller
+    public class Controller_Score_Card : Controller
     {
         private IUnitOfWork _uow;
         private Model_Courses_IRepository _courseRepository;
@@ -53,17 +53,17 @@ namespace CSIS425.Controllers
         }
 
         [WebMethod][ScriptMethod]
-        private void load_page(HttpContext context, NameValueCollection request)
+        private ActionResult load_page(HttpContext context, NameValueCollection request)
         {
-            Guid course_id = new Guid( request["course_id"] );
-            Guid player_id = new Guid( request["player_id"] );
+            //Guid course_id = new Guid( request["course_id"] );
+            //Guid player_id = new Guid( request["player_id"] );
 
             //load the course record
-            Model_Courses course = _courseRepository.FindBy(course_id);
+            //Model_Courses course = _courseRepository.FindBy(course_id);
 
             //load the player record
-            Model_Players player = _playerRepository.FindBy(player_id);
-
+            //Model_Players player = _playerRepository.FindBy(player_id);
+            return View("ScoreCard");
         }
 
         [WebMethod][ScriptMethod]
