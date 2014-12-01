@@ -253,7 +253,7 @@
     <EmbeddedResource Include="NHibernate\MappingFiles\Rounds.hbm.xml" />
     <Content Include="Main.html" />
     <Content Include="New Round.html" />
-    <Content Include="NHibernate\MappingFiles\Users.hbm.xml" />
+    <EmbeddedResource Include="NHibernate\MappingFiles\Users.hbm.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
