@@ -47,7 +47,15 @@
 
                 success: function (response) {
                     console.log('success', response);
-                    location.reload();
+                    
+                    if (response.success == false) {
+                        jQuery('body').unmask();
+                        alert(response.message);
+                    }
+                    else {
+                        window.location = "Main.html";
+                    }
+
                 },
                 error: function (x, textStatus) {
                     console.log('error', x, textStatus);

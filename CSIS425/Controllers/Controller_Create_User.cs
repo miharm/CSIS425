@@ -50,18 +50,35 @@ namespace CSIS425.Controllers
             string last_name = request["last_name"];
             string user_name = request["user_name"];
             string password = request["password"];
+            
+            bool notUsed = true;
+            String message = "";
 
-            Model_Users new_user = new Model_Users();
-            new_user.user_id = user_id;
-            new_user.first_name = first_name;
-            new_user.last_name = last_name;
-            new_user.user_name = user_name;
-            new_user.password = password;
+            IEnumerable<Model_Users> users = _userRespository.FindAll();
+            foreach (Model_Users user in users)
+            {
+                if (request["user_name"] == user.user_name)
+                {
+                    notUsed = false;
+                    message = "User name is already in use.";
+                    break;
+                }
+            }
 
-            _userRespository.Add(new_user);
-            _uow.Commit();
+            if (notUsed == true)
+            {
+                Model_Users new_user = new Model_Users();
+                new_user.user_id = user_id;
+                new_user.first_name = first_name;
+                new_user.last_name = last_name;
+                new_user.user_name = user_name;
+                new_user.password = password;
 
-            UtilityClass.respond(context, true, "", new { });
+                _userRespository.Add(new_user);
+                _uow.Commit();
+            }
+
+            UtilityClass.respond(context, notUsed, message, new { });
         }
     }
 }
