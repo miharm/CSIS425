@@ -237,6 +237,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="CreateCourse.html" />
+    <Content Include="Images\DiscBasket.jpg" />
     <Content Include="Register.html" />
     <Content Include="Login.html" />
     <Content Include="Images\download.jpg" />
@@ -274,6 +275,7 @@
     <Content Include="StyleSheet\jquery-ui.min.css" />
     <Content Include="StyleSheet\jquery.loadmask.css" />
     <Content Include="StyleSheet\StyleSheet.css" />
+    <Content Include="StyleSheet\styleSheetTwo.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

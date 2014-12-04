@@ -5,74 +5,74 @@
     <link rel="stylesheet" type="text/css" href="StyleSheet/StyleSheet.css" />    
 </head>
 <body>
-    <h1>Login</h1>
-    <br/>
-    <div class="pButtons">
-        Enter Username <br/>
-        <input id="user_name" name="user_name" type="text" /><br /> <br />
-        Enter Password <br />
-        <input id="password" name="password" type="password" />
-        <br />
-        <br />
-        <input id="action" name="action" type="hidden" onclick="check(this.form)" />
-        <button id="btnLoginSumbit" type="submit" >Login</button>
-
-        <!--Need validation code and link to main menu--->
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        Need an Account?
-        <form action="Register.html">
-            <button id="btnRegisterSumbit" type="submit">Create Account</button>
-        </form>
-    </div>
-
-    <link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
-    <link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
-    <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
-    <script src="Scripts/jquery.loadmask.js" type="text/javascript"></script>
-    <script>
-        var object = {
-            login: function () {
-                //mask the page
-                jQuery('body').mask('Logging in')
-                jQuery.ajax({
-                    url: 'foo.aspx',
-                    data: {
-                        'user_name': jQuery("#user_name").val(),
-                        'password': jQuery("#password").val(),
-                        'action': 'manage_login',
-                    },
-                    type: 'post',
-                    dataType: 'json',
-                    success: function (response) {
-                        console.log('success', response);
-                        if (response.success == true) {
-                            window.location = "Main.html";
-                        }
-                        else {
+    <a href="Login.html">
+        <h1>Disc-Golf Scorecard</h1></a>
+        <div id="card">
+            <h2>Login</h2>
+            <br />
+            <div class="pButtons">
+                Enter Username <br />
+                <input id="user_name" name="user_name" type="text" class="textBox"><br /> <br />
+                Enter Password <br />
+                <input id="password" name="password" type="password" class="textBox" />
+                <br />
+                <br />
+                <input id="action" name="action" type="hidden" onclick="check(this.form)" />
+                <button id="btnLoginSumbit" type="submit">Login</button>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br>
+                Need an Account?
+                <form action="Register.html">
+                    <button id="btnRegisterSumbit" type="submit">Create Account</button>
+                </form>
+            </div>
+        </div>
+        <link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
+        <link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+        <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="Scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="Scripts/jquery.loadmask.js" type="text/javascript"></script>
+        <script>
+            var object = {
+                login: function () {
+                    //mask the page
+                    jQuery('body').mask('Logging in')
+                    jQuery.ajax({
+                        url: 'foo.aspx',
+                        data: {
+                            'user_name': jQuery("#user_name").val(),
+                            'password': jQuery("#password").val(),
+                            'action': 'manage_login',
+                        },
+                        type: 'post',
+                        dataType: 'json',
+                        success: function (response) {
+                            console.log('success', response);
+                            if (response.success == true) {
+                                window.location = "Main.html";
+                            }
+                            else {
+                                jQuery('body').unmask();
+                                alert("Invalid Username or Password");
+                            }
+                        },
+                        error: function (x, textStatus) {
+                            console.log('error', x, textStatus);
                             jQuery('body').unmask();
-                            alert("Invalid Username or Password");
                         }
-                    },
-                    error: function (x, textStatus) {
-                        console.log('error', x, textStatus);
-                        jQuery('body').unmask();
-                    }
-                });
+                    });
+                }
             }
-        }
-        jQuery(document).ready(function () {
+            jQuery(document).ready(function () {
 
-            jQuery('#btnLoginSumbit').click(function () {
-                object.login();
+                jQuery('#btnLoginSumbit').click(function () {
+                    object.login();
+                });
             });
-        });
 
-    </script>
+        </script>
 </body>
 </html>

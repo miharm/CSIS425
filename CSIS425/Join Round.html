@@ -6,23 +6,25 @@
 </head>
 <body>
 
-    <h1><a href="Main.html">Disc-Golf Scorecard</a></h1>
-    <h2>Join Round</h2> <br />
-    <div class="pButtons">
-        Enter invite code
-        <input id="round_id" name="round_id" type="text" /><br /> <br />
-        Select Player
-        <select id="player_id">
-            <option>player 2</option>
-            <option>player 3</option>
-            <option>player 4</option>
-        </select>
-        <br />
-        <br />
-        <input id="action" name="action" type="hidden" />
-        <button id="btnSumbit" type="submit">Join Round</button>
-    </div>
+    <a href="Main.html">
+        <h1>Disc-Golf Scorecard</h1></a>
+    <div id="card">
+        <h2>Join Round</h2> <br />
+        <div class="pButtons">
+            Enter invite code <br />
+            <input id="round_id" name="round_id" type="text" class="textBox" /><br /> <br />
+            Select Player <br />
+            <select id="player_id" class="textBox">
+                <option>player 2</option>
+                <option>player 3</option>
+                <option>player 4</option>
+            </select>
+            <br />
+            <br />
+            <input id="action" name="action" type="hidden" />
+            <button id="btnSumbit" type="submit">Join Round</button>
+        </div></div>
 
-    <!--Need link to viewing scorecard--->
+        <!--Need link to viewing scorecard--->
 </body>
 </html>
