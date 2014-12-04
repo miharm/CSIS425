@@ -78,7 +78,7 @@
             padding-left: 90px;
         }
 
-            .textBox{
+       .textBox{
             width:200px;
             height: 24px;
             font-size: 17px;
@@ -120,6 +120,27 @@
             background-color:#f26522;
         }
      
+        .main{
+            font-size:21px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 240px;
+            background-color:#3d8ccb;
+        }
+
+        .main:hover{
+            font-size:21px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 240px;
+            background-color:#f26522;
+        }
         #CreateCourse{
             font-size:15px;
             margin-left:150px;
@@ -137,14 +158,141 @@
             background-position:center;
         }
 
-        .btnPlayer{
-            color: red;
-            margin:0px 0px 0px 0px;
-            border-radius:0px;
-            width:100px;
-            height:40px;
-            background:none;
-            background-color:white;
+        #player1{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 48px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:340px;
+            left: 90px;
+        }
+         #player1:hover{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#f26522;
+            position: absolute;
+            top:340px;
+            left: 90px;
+        }
+       #player2{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:340px;
+            left: 150px;
+           }
+
+        #player2:hover{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#f26522;
+            position: absolute;
+            top:340px;
+            left: 150px;
+           }
+
+         #player3{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:340px;
+            left: 210px;
+        }
+
+          #player3:hover{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#f26522;
+            position: absolute;
+            top:340px;
+            left: 210px;
+        }
+        #player4{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:340px;
+            left: 270px;
+        }
+
+           #player4:hover{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 50px;
+            background-color:#f26522;
+            position: absolute;
+            top:340px;
+            left: 270px;
+        }
+
+        #start{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 140px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:420px;
+            left: 90px;
+        }
+
+          #start:hover{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 140px;
+            background-color:#f26522;
+            position: absolute;
+            top:420px;
+            left: 90px;
         }
 
         a:link { color:red; text-decoration:none}

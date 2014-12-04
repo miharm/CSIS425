@@ -6,22 +6,24 @@
 </head>
 
 <body>
-
-    <h1><a href="Main.html">Disc-Golf Scorecard</a></h1>
+    <a href="Main.html">
+        <h1>Disc-Golf Scorecard</h1></a>
+    <div id="card">
     <h2>Create Course</h2> <br/>
     <div class="pButtons">
-        Enter a new course name
-        <input id="name" name="name" type="text" /><br /> <br />
-        Choose the number of holes
-        <input id="holes" name="holes" type="number" min="3" max="27" step="1" value="9" />
+        Enter a new course name <br/>
+        <input id="name" name="name" type="text" class="textBox" /><br /> <br />
+        Choose the number of holes <br/>
+        <input id="holes" name="holes" type="number" min="3" max="27" step="1" value="9" class="textBox" />
         <br />
         <br />
-        Enter the pars (comma seperated ex. 1,2,3,4)
-        <input id="pars" name="pars" type="text" />
+        Enter the pars (comma seperated ex. 1,2,3,4)<br/>
+        <input id="pars" name="pars" type="text" class="textBox" />
         <br />
         <input id="action" name="action" type="hidden" />
+        <br />
         <button id="btnSumbit" type="submit">Create Course</button>
-    </div>
+    </div></div>
 </body>
 </html>
 
