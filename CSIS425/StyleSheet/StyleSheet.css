@@ -1,13 +1,14 @@
 ﻿        body {
-          background-color: white;
+          background-color:  #31a354;
           background-image:url('/Images/backgroundBasketLow.jpg');
+         background-repeat:no-repeat;
         }
 
         h1 {
             position: absolute;
             height:60px;
-            width:390px;
-            left: 40px;
+            width:420px;
+            left: 0px;
             z-index: 2;
             
             margin: 0 0 0 0;
@@ -16,17 +17,17 @@
             background:#3d8ccb;
             
             text-align: left;
-            padding-left: 90px;
+            padding-left: 60px;
             color: #ffffcc;
             font-family: Helvetica, sans-serif;
-            font-size: 30px;
+            font-size: 33px;
         }
 
        h1:hover {
             position: absolute;
             height:60px;
-            width:390px;
-            left: 40px;
+            width:420px;
+            left: 0px;
             z-index: 2;
             
             margin: 0 0 0 0;
@@ -35,34 +36,35 @@
             background:#f26522;
             
             text-align: left;
-            padding-left: 90px;
+            padding-left: 60px;
             color: #ffffcc;
             font-family: Helvetica, sans-serif;
-            font-size: 30px;
+            font-size: 33px;
         }
         h2 {
             text-align: left;
             color: #ffffcc;
             font-family: Helvetica, sans-serif;
             font-size: 20px;
-            margin: 4px 0 0 0;
+            margin: 5px 0 0 0;
             height:32px;
-            width:390px;
+            width:420px;
 
             position: absolute;
             top: 15px;
-            padding-top:5px;
-            padding-left: 90px;
+            z-index:3;
+            padding-top:75px;
+            padding-left: 60px;
             background-color: #008f37;
         }
 
         #card{
             width: 480px;
-            height:700px;
+            height:800px;
             background-color: #31a354;
             position: absolute;
-            top: 70px;
-            left: 40px;
+            top: 0px;
+            left: 0px;
             z-index:1;
         }
 
@@ -73,9 +75,9 @@
             font-size: 17px;
             font-family: Helvetica, sans-serif;
             position: absolute;
-            top: 75px;
+            top: 150px;
             
-            padding-left: 90px;
+            padding-left: 60px;
         }
 
        .textBox{
@@ -170,7 +172,7 @@
             background-color:#3d8ccb;
             position: absolute;
             top:420px;
-            left: 90px;
+            left: 60px;
         }
 
           #start:hover{
@@ -184,7 +186,7 @@
             background-color:#f26522;
             position: absolute;
             top:420px;
-            left: 90px;
+            left: 60px;
         }
 
         a:link { color:red; text-decoration:none}

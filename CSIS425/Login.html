@@ -5,31 +5,32 @@
     <link rel="stylesheet" type="text/css" href="StyleSheet/StyleSheet.css" />    
 </head>
 <body>
-    <a href="Login.html">
-        <h1>Disc-Golf Scorecard</h1></a>
-        <div id="card">
-            <h2>Login</h2>
+    <div id="card">
+        <a href="Login.html">
+            <h1>Disc-Golf Scorecard</h1>
+        </a>
+        <h2>Login</h2>
+        <br />
+        <div class="pButtons">
+            Enter Username <br />
+            <input id="user_name" name="user_name" type="text" class="textBox"><br /> <br />
+            Enter Password <br />
+            <input id="password" name="password" type="password" class="textBox" />
             <br />
-            <div class="pButtons">
-                Enter Username <br />
-                <input id="user_name" name="user_name" type="text" class="textBox"><br /> <br />
-                Enter Password <br />
-                <input id="password" name="password" type="password" class="textBox" />
-                <br />
-                <br />
-                <input id="action" name="action" type="hidden" onclick="check(this.form)" />
-                <button id="btnLoginSumbit" type="submit">Login</button>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br>
-                Need an Account?
-                <form action="Register.html">
-                    <button id="btnRegisterSumbit" type="submit">Create Account</button>
-                </form>
-            </div>
+            <br />
+            <input id="action" name="action" type="hidden" onclick="check(this.form)" />
+            <button id="btnLoginSumbit" type="submit">Login</button>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br>
+            Need an Account?
+            <form action="Register.html">
+                <button id="btnRegisterSumbit" type="submit">Create Account</button>
+            </form>
         </div>
+    </div>
         <link href="StyleSheet/jquery.loadmask.css" rel="stylesheet" type="text/css" />
         <link href="StyleSheet/jquery-ui.min.css" rel="stylesheet" type="text/css" />
         <script src="Scripts/jquery-1.10.2.js" type="text/javascript"></script>
