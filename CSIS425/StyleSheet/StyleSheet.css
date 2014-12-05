@@ -20,7 +20,7 @@
             padding-left: 60px;
             color: #ffffcc;
             font-family: Helvetica, sans-serif;
-            font-size: 33px;
+            font-size: 35px;
         }
 
        h1:hover {
@@ -39,7 +39,7 @@
             padding-left: 60px;
             color: #ffffcc;
             font-family: Helvetica, sans-serif;
-            font-size: 33px;
+            font-size: 35px;
         }
         h2 {
             text-align: left;
@@ -171,7 +171,7 @@
             width: 140px;
             background-color:#3d8ccb;
             position: absolute;
-            top:420px;
+            top:320px;
             left: 60px;
         }
 
@@ -188,6 +188,64 @@
             top:420px;
             left: 60px;
         }
+
+        .update{
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 140px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:135px;
+            left: 55px;
+        }
+
+           .invite {            
+            font-size:17px;
+            margin: 4px 0 0 0;
+            color: #ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+            height:48px;
+            width: 140px;
+            background-color:#3d8ccb;
+            position: absolute;
+            top:135px;
+            left: 270px;
+        }
+
+        #scrcrdTable {
+            position: absolute;
+            top: 210px;
+            left: 5px;
+        }
+        
+        th{
+            background-color: #008f37;  
+            color:#ffffcc;
+            font-family: Helvetica, sans-serif;
+            font-weight:100;
+            font-size: 15px;
+            width:50px;
+     }
+         
+     .hole-num{
+            background-color: #008f37;
+            color:#ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+     }  
+
+     .hole-par{
+            background-color: #008f37;
+            color:#ffffcc;
+            font-family: Helvetica, sans-serif;
+            text-align:center;
+     }
+
 
         a:link { color:red; text-decoration:none}
         a:visited { color:red; text-decoration:none }
