@@ -221,6 +221,7 @@
             position: absolute;
             top: 210px;
             left: 5px;
+   
         }
         
         th{
@@ -228,10 +229,19 @@
             color:#ffffcc;
             font-family: Helvetica, sans-serif;
             font-weight:100;
-            font-size: 15px;
-            width:50px;
+            font-size: 17px;
+            padding-top:5px;
+            padding-bottom:5px;
+            
      }
-         
+    
+        td{
+            height:48px;
+             font-size: 17px;
+            font-weight:100;
+            font-family: Helvetica, sans-serif;
+
+        }     
      .hole-num{
             background-color: #008f37;
             color:#ffffcc;
@@ -246,7 +256,36 @@
             text-align:center;
      }
 
+     .scoring{
+           background-color: #c2e699;
+            color: #005437;
+            font-family: Helvetica, sans-serif;
+            font-size: 20px;
+            text-align:center;
+            width: 85px;
+            padding-top:11px;
+            padding-bottom:11px;
+            border-color: #3d8ccb;
+            border-width:2px;
+            border-style: solid;
+     }
 
+        .scoring:focus{
+           background-color: #c2e699;
+            color: #005437;
+            font-family: Helvetica, sans-serif;
+            font-size: 20px;
+            text-align:center;
+            width: 85px;
+            padding-top:11px;
+            padding-bottom:11px;
+            border-color: #f26522;
+            border-width:2px;
+            border-style: solid;
+         
+     }
+
+    
         a:link { color:red; text-decoration:none}
         a:visited { color:red; text-decoration:none }
         a:hover { color:red; text-decoration:none }
