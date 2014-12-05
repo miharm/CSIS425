@@ -10,6 +10,7 @@ using System.Web.Script.Serialization;
 using System.Web.Script.Services;
 using CSIS425.Utility;
 using System.Collections.Generic;
+using System.Web.SessionState;
 
 namespace CSIS425.Controllers
 {
@@ -52,10 +53,12 @@ namespace CSIS425.Controllers
                 if (request["user_name"] == user.user_name && request["password"] == user.password)
                 {
                     found = true;
+                    //HttpContext.Current.Session["user_id"] = user.user_id;
                     break;
                 }
 
             }//end foreach
+           
             UtilityClass.respond(context, found, "", new { });
             
         }//end login

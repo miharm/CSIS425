@@ -6,11 +6,14 @@ using System.Web;
 using System.Web.Mvc;
 using System.Collections.Specialized;
 using CSIS425.Infrastructure.UnitOfWork;
+using CSIS425.Infrastructure.Query;
 using CSIS425.Models;
 using System.Web.Services;
 using System.Web.Script;
 using System.Web.Script.Serialization;
 using System.Web.Script.Services;
+using CSIS425.NHibernate;
+using CSIS425.Utility;
 
 namespace CSIS425.Controllers
 {
@@ -53,17 +56,25 @@ namespace CSIS425.Controllers
         }
 
         [WebMethod][ScriptMethod]
-        private ActionResult load_page(HttpContext context, NameValueCollection request)
+        private void load_page(HttpContext context, NameValueCollection request)
         {
-            //Guid course_id = new Guid( request["course_id"] );
-            //Guid player_id = new Guid( request["player_id"] );
+            Guid round_id = new Guid(request["round_id"]);
 
             //load the course record
-            //Model_Courses course = _courseRepository.FindBy(course_id);
+            //IEnumerable<Model_Rounds> round = _roundRepository.FindAll();
+
+            //load the course record
+            //Model_Courses course = _courseRepository.FindBy(round.course_id);
+
+            Query query = (Query)SessionFactory.GetCurrentSession().CreateQuery("FROM Players WHERE round_id='" + request["round_id"] + "'");
 
             //load the player record
-            //Model_Players player = _playerRepository.FindBy(player_id);
-            return View("ScoreCard");
+            IEnumerable<Model_Players> players = _playerRepository.FindBy(query);
+
+            //Object pageload_data = new{ course=course, players=players };
+
+            UtilityClass.respond(context, true, "", new { players=players });
+
         }
 
         [WebMethod][ScriptMethod]
