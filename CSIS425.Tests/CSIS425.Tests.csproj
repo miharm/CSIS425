@@ -101,7 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelTesting\CourseTesting.cs" />
+    <Compile Include="ModelTesting\ModelCoursesTesting.cs" />
+    <Compile Include="ModelTesting\ModelPlayersTesting.cs" />
+    <Compile Include="ModelTesting\ModelUserTesting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

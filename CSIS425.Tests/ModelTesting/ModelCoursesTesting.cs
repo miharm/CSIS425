@@ -10,7 +10,7 @@ using CSIS425;
 namespace CSIS425.Tests.ModelTesting
 {
     [TestFixture]
-    class CourseTesting
+    class ModelCoursesTesting
     {
       
         //Not sure how to test Guid
@@ -19,7 +19,7 @@ namespace CSIS425.Tests.ModelTesting
         public void HolesTest(){
             Model_Courses c = new Model_Courses();
             c.hole = 9;
-            Assert.AreEqual(9, c.holes());
+            Assert.AreEqual(9, c.holes);
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace CSIS425.Tests.ModelTesting
         {
             Model_Courses c = new Model_Courses();
             c.pars = "3,3,4";
-            Assert.AreEqual("3,3,4", c.pars());
+            Assert.AreEqual("3,3,4", c.pars);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace CSIS425.Tests.ModelTesting
         {
             Model_Courses c = new Model_Courses();
             c.name = "Hoffman";
-            Assert.AreEqual("Hoffman",c.name());
+            Assert.AreEqual("Hoffman",c.name);
         }
     }
 }
