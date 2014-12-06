@@ -5,21 +5,37 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using CSIS425;
-using CSIS425.Models.Model_Courses;
+
 
 namespace CSIS425.Tests.ModelTesting
 {
     [TestFixture]
     class CourseTesting
     {
+      
+        //Not sure how to test Guid
 
         [Test]
         public void HolesTest(){
             Model_Courses c = new Model_Courses();
-            c.holes() = 9;
+            c.hole = 9;
             Assert.AreEqual(9, c.holes());
-            
+        }
 
+        [Test]
+        public void ParTest()
+        {
+            Model_Courses c = new Model_Courses();
+            c.pars = "3,3,4";
+            Assert.AreEqual("3,3,4", c.pars());
+        }
+
+        [Test]
+        public void NameTest()
+        {
+            Model_Courses c = new Model_Courses();
+            c.name = "Hoffman";
+            Assert.AreEqual("Hoffman",c.name());
         }
     }
 }
