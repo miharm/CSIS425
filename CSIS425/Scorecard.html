@@ -6,105 +6,35 @@
 </head>
 
 <body>
-    <a href="Main.html">
-        <h1>Disc-Golf Scorecard</h1>
-    </a>
-    <div id="card">
-        <h2>Scorecard</h2>
+    <div class="scorecardTitle">
+        <a href="Main.html">
+            <h1>Disc-Golf Scorecard</h1>
+        </a>
+    </div>
+    <br>
+    <div id="scorecardContainer">
         <form name="scorecard">
             <div id="btnContainer">
-                <button id="btnUpdate" type="button" class="update">update scores</button>
-                <button id="btnInvite" type="button" class="invite">invite code</button>
+                <div id="btnCenter">
+                    <button id="btnUpdate" type="button">update scores</button>
+                    <button id="btnInvite" type="button">invite code</button>
+                </div>
             </div>
             <br />
-            <input id="player_1" name="player_1" type="hidden" value="111111" />
-            <input id="player_2" name="player_2" type="hidden" value="222222" />
-            <input id="player_3" name="player_3" type="hidden" value="333333" />
-            <input id="player_4" name="player_4" type="hidden" value="444444" />
+            <input id="player_1" name="player_1" type="hidden" value="111111"/>
+            <input id="player_2" name="player_2" type="hidden" value="222222"/>
+            <input id="player_3" name="player_3" type="hidden" value="333333"/>
+            <input id="player_4" name="player_4" type="hidden" value="444444"/>
             <table id="scrcrdTable">
-                <tr id="scrcrdHdr">
-                    <th id="hdrHole">Hole</th>
-                    <th id="hdrPar">Par</th>
-                    <th id="namePlayer1" >Player1</th>
-                    <th id="namePlayer2" >Player2</th>
-                    <th id="namePlayer2" >Player3</th>
-                    <th id="namePlayer2" >Player4</th>
-                </tr>
-                <tr id="holeRow_1" class="hole-row">
-                    <td id="holeNum_1" class="hole-num">1</td>
-                    <td id="holePar_1" class="hole-par">3</td>
-                    <td id="holeP1_1"><input id="scoreP1_1" name="scoreP1_1" type="number" class="scoring"/></td>
-                    <td id="holeP2_1"><input id="scoreP2_1" name="scoreP2_1" type="number" class="scoring" /></td>
-                    <td id="holeP3_1"><input id="scoreP3_1" name="scoreP3_1" type="number" class="scoring" /></td>
-                    <td id="holeP4_1"><input id="scoreP4_1" name="scoreP4_1" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_2" class="hole-row">
-                    <td id="holeNum_2" class="hole-num">2</td>
-                    <td id="holePar_2" class="hole-par">3</td>
-                    <td id="holeP1_2"><input id="scoreP1_2" name="scoreP1_2" type="number" class="scoring" /></td>
-                    <td id="holeP2_2"><input id="scoreP2_2" name="scoreP2_2" type="number" class="scoring" /></td>
-                    <td id="holeP3_2"><input id="scoreP3_2" name="scoreP3_2" type="number" class="scoring" /></td>
-                    <td id="holeP4_2"><input id="scoreP4_2" name="scoreP4_2" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_3" class="hole-row">
-                    <td id="holeNum_3" class="hole-num">3</td>
-                    <td id="holePar_3" class="hole-par">3</td>
-                    <td id="holeP1_3"><input id="scoreP1_3" name="scoreP1_3" type="number" class="scoring" /></td>
-                    <td id="holeP2_3"><input id="scoreP2_3" name="scoreP2_3" type="number" class="scoring" /></td>
-                    <td id="holeP3_3"><input id="scoreP3_3" name="scoreP3_3" type="number" class="scoring" /></td>
-                    <td id="holeP4_3"><input id="scoreP4_3" name="scoreP4_3" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_4" class="hole-row">
-                    <td id="holeNum_4" class="hole-num">4</td>
-                    <td id="holePar_4" class="hole-par">3</td>
-                    <td id="holeP1_4"><input id="scoreP1_4" name="scoreP1_4" type="number" class="scoring" /></td>
-                    <td id="holeP2_4"><input id="scoreP2_4" name="scoreP2_4" type="number" class="scoring" /></td>
-                    <td id="holeP3_4"><input id="scoreP3_4" name="scoreP3_4" type="number" class="scoring" /></td>
-                    <td id="holeP4_4"><input id="scoreP4_4" name="scoreP4_4" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_5" class="hole-row">
-                    <td id="holeNum_5" class="hole-num">5</td>
-                    <td id="holePar_5" class="hole-par">3</td>
-                    <td id="holeP1_5"><input id="scoreP1_5" name="scoreP1_5" type="number" class="scoring" /></td>
-                    <td id="holeP2_5"><input id="scoreP2_5" name="scoreP2_5" type="number" class="scoring" /></td>
-                    <td id="holeP3_5"><input id="scoreP3_5" name="scoreP3_5" type="number" class="scoring" /></td>
-                    <td id="holeP4_5"><input id="scoreP4_5" name="scoreP4_5" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_6" class="hole-row">
-                    <td id="holeNum_6" class="hole-num">6</td>
-                    <td id="holePar_6" class="hole-par">3</td>
-                    <td id="holeP1_6"><input id="scoreP1_6" name="scoreP1_6" type="number" class="scoring" /></td>
-                    <td id="holeP2_6"><input id="scoreP2_6" name="scoreP2_6" type="number" class="scoring" /></td>
-                    <td id="holeP3_6"><input id="scoreP3_6" name="scoreP3_6" type="number" class="scoring" /></td>
-                    <td id="holeP4_6"><input id="scoreP4_6" name="scoreP4_6" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_7" class="hole-row">
-                    <td id="holeNum_7" class="hole-num">7</td>
-                    <td id="holePar_7" class="hole-par">3</td>
-                    <td id="holeP1_7"><input id="scoreP1_7" name="scoreP1_7" type="number" class="scoring" /></td>
-                    <td id="holeP2_7"><input id="scoreP2_7" name="scoreP2_7" type="number" class="scoring" /></td>
-                    <td id="holeP3_7"><input id="scoreP3_7" name="scoreP3_7" type="number" class="scoring" /></td>
-                    <td id="holeP4_7"><input id="scoreP4_7" name="scoreP4_7" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_8" class="hole-row">
-                    <td id="holeNum_8" class="hole-num">8</td>
-                    <td id="holePar_8" class="hole-par">3</td>
-                    <td id="holeP1_8"><input id="scoreP1_8" name="scoreP1_8" type="number" class="scoring" /></td>
-                    <td id="holeP2_8"><input id="scoreP2_8" name="scoreP2_8" type="number" class="scoring" /></td>
-                    <td id="holeP3_8"><input id="scoreP3_8" name="scoreP3_8" type="number" class="scoring" /></td>
-                    <td id="holeP4_8"><input id="scoreP4_8" name="scoreP4_8" type="number" class="scoring" /></td>
-                </tr>
-                <tr id="holeRow_9" class="hole-row">
-                    <td id="holeNum_9" class="hole-num">9</td>
-                    <td id="holePar_9" class="hole-par">3</td>
-                    <td id="holeP1_9"><input id="scoreP1_9" name="scoreP1_9" type="number" class="scoring" /></td>
-                    <td id="holeP2_9"><input id="scoreP2_9" name="scoreP2_9" type="number" class="scoring" /></td>
-                    <td id="holeP3_9"><input id="scoreP3_9" name="scoreP3_9" type="number" class="scoring" /></td>
-                    <td id="holeP4_9"><input id="scoreP4_9" name="scoreP4_9" type="number" class="scoring" /></td>
-                </tr>
+                <thead id="scrcrdHdr">
+                    <th id="hdrHole">HOLE</th><th id="hdrPar">PAR</th>
+                </thead>
+                <tbody id="scrcrdBody">
+                    <tr></tr>
+                </tbody>
             </table>
         </form>
-        </div>
+    </div>
 </body>
 </html>
 
@@ -140,7 +70,7 @@
 
         submit_scores: function () {
             //mask the page
-            jQuery('body').mask('Updating Scores')
+            jQuery( 'body' ).mask( 'Updating Scores' )
             /*jQuery.ajax({
                 url: 'foo.aspx',
                 data: {
@@ -163,7 +93,7 @@
         },
 
         //regex for numbers ^\d+$
-        get_player_data: function () {
+        get_player_data: function() {
             //Resetting the current scores array, the 0th value is the running total par
             scorecard.current_scores = [0];
 
@@ -172,104 +102,174 @@
 
             var current_hole, current_par, i, score, score_int, scores_str;
             //Loop through the rows for each hole
-            jQuery('#scrcrdTable tr.hole-row').each(function () {
+            jQuery('#scrcrdTable tr.hole-row').each( function() {
                 //Will be used if this is the latest hole with all the scores saved
-                current_hole = jQuery(this).find("td.hole-num").text();
+                current_hole = jQuery( this ).find( "td.hole-num" ).text();
 
                 //Loop through each par and scores for each hole
                 //When "i" is 0, it is the par for the hole. Otherwise, "i" is the player number
-                for (i = 0; i < current_scores.length; i++) {
-                    if (0 == i) {
+                for ( i = 0; i < current_scores.length; i++ ) {
+                    if ( 0 == i ) {
                         //Update the current hole's par
-                        current_par = jQuery(this).find("td.hole-par").text();
-                        current_par = parseInt(current_par);
+                        current_par = jQuery( this ).find( "td.hole-par" ).text();
+                        current_par = parseInt( current_par );
                         scorecard.current_scores[i] += current_par;
                     } else {
                         //Get the score for the player for validation
-                        score = jQuery('#scoreP' + i + '_' + current_hole).value();
+                        score = jQuery('#scoreP'+i+'_'+current_hole).value();
 
                         //The comma-seperated-string for scores for this player
-                        scores_str = scorecard.players['player_' + i]['scores'];
+                        scores_str = scorecard.players['player_'+i]['scores'];
 
                         //If the score is empty, then this is hole hasn't been played yet or all the scores aren't in
-                        if ('' === score) {
+                        if ( '' === score ) {
                             //Add a new comma for the empty score in the comma-separated-string
                             scores_str = scores_str + ',';
 
                             //Checking if the current hole is the latest hole played, we only want to update for the latest
-                            if (scorecard.latest_hole < current_hole) {
+                            if ( scorecard.latest_hole < current_hole ) {
                                 scorecard.latest_hole = current_hole;
                             }
-                        } else if (regex_int.test(score)) {
+                        } else if ( regex_int.test( score ) ) {
                             //Add the score for this hole and comma into the player score comma-separated-string
                             scores_str = scores_str + score + ',';
 
                             //This is a positive integer, so lets add it to this player's score total
-                            score_int = parseInt(score);
+                            score_int = parseInt( score );
                             scorecard.current_scores[i] += score_int;
 
                         }
 
                         //Update the scores string
-                        scorecard.players['player_' + i]['scores'] = scores_str;
+                        scorecard.players['player_'+i]['scores'] = scores_str;
                     }
                 }
             });
         },
 
-        load_page_data: function () {
-            var round_id = "bc9f2e6f-943a-470f-a39c-bd227b81e371";
-            jQuery.ajax({
-                url: 'foo.aspx',
-                data: {
-                    'round_id': round_id,
-                    'action': 'manage_score_card',
-                    'command': 'load_page'
-                },
-                type: 'get',
-                dataType: 'json',
-                success: function (response) {
-                    console.log('success', response);
-                    //location.reload();
-                },
-                error: function (x, textStatus) {
-                    console.log('error', x, textStatus);
-                    //jQuery('body').unmask();
+        create_scorecard: function( round_data ) {
+            var round = JSON.parse(round_data);
+
+            var scrcrd = jQuery('#scrcrdBody');
+            var num_holes = round.course.holes;
+            var course_pars = round.course.pars.split(",");
+            var i, hole_num, tr_hole, td_player;
+            
+            //Building the score card table
+            for ( i = 1; i <= num_holes; i++ ) {
+                hole_num = i - 1;
+
+                //Starting the table-row and adding the cell for the hole number
+                tr_hole = '<tr id="holeRow_'+i+'" class="hole-row"><td id="holeNum_'+i+'" class="hole-num">'+i+'</td>';
+
+                //Adding the cell for the hole par
+                tr_hole += '<td id="holePar_'+i+'" class="hole-par">'+course_pars[hole_num]+'</td></tr>';
+
+                if ( 1 == i ){
+                    jQuery('#scrcrdBody').html(tr_hole);
+                } else {
+                    //Adding the row to the table
+                    jQuery('#scrcrdBody tr:last').after(tr_hole);
                 }
-            });
+
+
+            }
+
+            scorecard.add_playerdata(round.players);
+        },
+
+        add_playerdata: function(players) {
+            var hole_num, player, player_num, player_scores, td_player;
+            //scrcrdHdr
+            for ( i = 0; i < players.length; i++ ) {
+                player_num = i + 1;
+
+                player = players[i];
+
+                player_scores = player.scores.split(",");
+
+                th_player = '<th id="namePlayer'+player_num+'">'+player.name+'</th>';
+                jQuery("#scrcrdHdr th:last").after(th_player);
+
+                for ( j = 0; j < player_scores.length; j++ ) {
+                    hole_num = j + 1;
+                    td_player = '<td id="holeP1_'+hole_num+'" class="scoring"><input id="scoreP1_'+hole_num+'" name="scoreP1_'+hole_num+'" type="number" value="'+player_scores[j]+'"/></td>';
+                    jQuery("#holeRow_"+hole_num+" td:last").after(td_player);
+                }
+            }
+        },
+
+        create_testdata: function() {
+            var player_1, player_2, player_3, player_4, players, course, round_data;
+            player_1 = { 
+                'id':      111111,
+                'name': 'Joeseph Shmoe',
+                'scores': '3,4,3,2,3,3,4,2,2,3,4,3,2,3,3,4,2,2,'
+            };
+            player_2 = { 
+                'id':      222222,
+                'name': 'Broseph Shmoe',
+                'scores': '3,4,3,2,3,3,4,2,2,3,4,3,2,3,3,4,2,2,'
+            };
+            player_3 = { 
+                'id':      333333,
+                'name': 'Moseph Shmoe',
+                'scores': '2,3,3,2,2,3,1,2,2,2,3,3,2,2,3,1,2,2,'
+            };
+            player_4 = { 
+                'id':      444444,
+                'name': 'Doseph Shmoe',
+                'scores': '6,4,3,5,5,4,6,2,2,6,4,3,5,5,4,6,2,2,'
+            };
+            course = {
+                'pars': '3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,',
+                'holes': 18,
+                'name': 'Lakewood'
+            };
+
+            players = [player_1, player_2, player_3, player_4];
+            round_data = {
+                'players': players,
+                'course': course
+            };
+
+            var json_data = JSON.stringify( round_data );
+
+            return json_data;
         }
     };
    jQuery(document).ready( function () {
-        //jQuery('#btnUpdate').click(function () {
-        //   scorecard.submit_scores();
-        //});
+        jQuery('#btnUpdate').click(function () {
+           scorecard.submit_scores();
+        });
 
-        ////Setting up the current scores array, the 0th value is the running total par
-        //scorecard.current_scores[0] = 0;
+        var json_data = scorecard.create_testdata();
+        console.log('json_data = '+json_data);
+        scorecard.create_scorecard(json_data);
+        //Setting up the current scores array, the 0th value is the running total par
+        scorecard.current_scores[0] = 0;
 
-        ///*//Setting up the pars array (for the pars of each hole)
-        ////NOTE: The 0th spot means nothing as there is no zeroth hole. Looks a little stupid, but it allows for some elegance above
-        //scorecard.pars[0] = 0;*/
+        /*//Setting up the pars array (for the pars of each hole)
+        //NOTE: The 0th spot means nothing as there is no zeroth hole. Looks a little stupid, but it allows for some elegance above
+        scorecard.pars[0] = 0;*/
 
-        ////Setting up the initial player objects
-        //jQuery("input[id^=player_]").each(function() {
-        //    //The player we are working with, eg "player1" or "player3"
-        //    player = this.name;
+        //Setting up the initial player objects
+        jQuery("input[id^=player_]").each(function() {
+            //The player we are working with, eg "player1" or "player3"
+            player = this.name;
 
-        //    //The id of the player for saving
-        //    player_id = this.value;
+            //The id of the player for saving
+            player_id = this.value;
 
-        //    //Building the score card for 
-        //    scorecard.players[player] = { 
-        //        'id': player_id,
-        //        'score': ''
-        //    };
+            //Building the score card for 
+            scorecard.players[player] = { 
+                'id': player_id,
+                'score': ''
+            };
 
-        //    //Add another player to the current scores array
-        //    scorecard.current_scores[] = 0;
-       //});
-
-       scorecard.load_page_data();
+            //Add another player to the current scores array
+            //scorecard.current_scores[] = 0;
+        });
 
    });
 </script>
